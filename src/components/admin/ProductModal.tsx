@@ -71,7 +71,7 @@ export default function ProductModal({ isOpen, onClose, onSave, product }: Produ
         sale_price: parseFloat(formData.sale_price as string),
         supply_cost: formData.supply_cost ? parseFloat(formData.supply_cost as string) : null,
         weight_lbs: formData.weight_lbs ? parseFloat(formData.weight_lbs as string) : null,
-        stock: parseInt(formData.stock as string) || 0,
+        stock: parseInt(String(formData.stock)) || 0,
         images_gallery: formData.images_gallery 
           ? formData.images_gallery.split(',').map(url => url.trim()).filter(url => url !== '') 
           : [],
